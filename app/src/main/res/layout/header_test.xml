@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="@color/light_background"
+    android:gravity="center_vertical"
+    android:paddingLeft="25dp"
+    android:id="@+id/title"
+    android:paddingRight="20dp"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:textColor="@color/light_grey_text_color"
+    android:textSize="14sp"
+    android:textStyle="bold"
+    tools:text="Sample text">
+
+</TextView>

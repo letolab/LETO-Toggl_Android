@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_background">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="beacons.leto.com.letoibeacons.activities.SettingsActivity"
+    android:background="@color/light_background"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/settings_message_format"
+        android:id="@+id/settingsMessageTV"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:textColor="@color/dark_grey_text_color" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="2">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:id="@+id/beaconIV"
+            android:src="@drawable/beacon_disabled"
+            android:layout_below="@+id/settingsMessageTV"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="50dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:id="@+id/mapIV"
+            android:src="@drawable/geofence_disabled"
+            android:layout_below="@+id/settingsMessageTV"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="50dp"
+            android:layout_weight="1"
+            android:paddingTop="35dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/beacons_disabled"
+        android:id="@+id/detectionStateTV"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textColor="@color/dark_grey_text_color"
+        android:layout_below="@+id/beaconIV"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="898432032 -9323 - 3290 -933232"
+        android:id="@+id/beaconUUIDTV"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:textColor="@color/light_grey_text_color"
+        android:layout_below="@+id/detectionStateTV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+    <Button
+        android:id="@+id/saveBtn"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:textStyle="bold"
+        android:background="@color/flat_green"
+        android:textColor="@color/white"
+        android:layout_below="@+id/beaconUUIDTV"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="40dp" />
+
+</LinearLayout>
+</ScrollView>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Main Colors-->
+    <color name="colorPrimary">#EB241F</color>
+    <color name="colorPrimaryDark">#DE1712</color>
+    <color name="colorAccent">#2ECC71</color>
+
+    <!--Basic Colors-->
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="dark_grey_text_color">#666666</color>
+    <color name="light_grey_text_color">#a6a6a6</color>
+    <color name="medium_grey_text_color">#999999</color>
+    <color name="light_background">#F5F8F9</color>
+    <color name="dark_background">#212121</color>
+    <color name="darkest_background">#111111</color>
+
+    <!--Others-->
+    <color name="flat_red">#e84c3d</color>
+    <color name="flat_green">#2fcc71</color>
+
+</resources>

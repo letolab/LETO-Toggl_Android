@@ -1,0 +1,87 @@
+ <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+     android:gravity="center">
+
+     <android.support.v7.widget.CardView
+         android:id="@+id/lastCard"
+         android:layout_gravity="center"
+         android:layout_marginBottom="8dp"
+         android:layout_marginLeft="@dimen/activity_vertical_margin"
+         android:layout_marginRight="@dimen/activity_vertical_margin"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:background="@color/white"
+         android:layout_marginTop="8dp">
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical"
+             android:paddingLeft="16dp"
+             android:paddingRight="16dp"
+             android:paddingTop="16dp"
+             android:paddingBottom="16dp">
+
+             <LinearLayout
+                 android:orientation="vertical"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_marginTop="5dp">
+
+                 <LinearLayout
+                     android:orientation="horizontal"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent">
+
+                     <beacons.leto.com.letoibeacons.custom_views.AutoResizeTextView
+                         android:layout_width="0dp"
+                         android:layout_height="fill_parent"
+                         android:maxLines="1"
+                         android:id="@+id/descriptionTV"
+                         android:text="-"
+                         android:textColor="@color/black"
+                         android:textSize="19sp"
+                         android:layout_weight="1" />
+                 </LinearLayout>
+
+                 <LinearLayout
+                     android:orientation="horizontal"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="10dp">
+
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:id="@+id/projectTV"
+                         android:text="- : -"
+                         android:textColor="@color/white"
+                         android:textSize="12sp"
+                         android:background="@color/light_grey_text_color"
+                         android:maxWidth="170dp"
+                         android:singleLine="true"
+                         android:padding="7dp" />
+
+                     <TextView
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:id="@+id/durationTV"
+                         android:textColor="@color/dark_grey_text_color"
+                         android:textSize="14sp"
+                         android:paddingTop="2dp"
+                         android:paddingBottom="2dp"
+                         android:paddingRight="7dp"
+                         android:paddingLeft="7dp"
+                         android:layout_weight="1"
+                         android:gravity="right" />
+                 </LinearLayout>
+             </LinearLayout>
+
+         </LinearLayout>
+     </android.support.v7.widget.CardView>
+
+ </LinearLayout>

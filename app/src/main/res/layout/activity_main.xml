@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:theme="@style/ToolBarStyle"
+        android:elevation="4dp" />
+
+    <FrameLayout
+        android:layout_below="@id/toolbar"
+        android:id="@+id/frame_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <ScrollView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:background="@color/light_background">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <android.support.v7.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:layout_marginLeft="@dimen/activity_vertical_margin"
+                        android:layout_marginRight="@dimen/activity_vertical_margin"
+                        android:layout_marginTop="@dimen/activity_vertical_margin">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="25dp"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin"
+                        android:paddingTop="25dp"
+                        tools:context=".activities.MainActivity">
+
+                        <beacons.leto.com.letoibeacons.custom_views.AutoResizeTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="Welcome back"
+                            android:id="@+id/fullNameTV"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            android:textSize="25sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="@string/this_week_time"
+                            android:id="@+id/textView4"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:layout_below="@+id/fullNameTV"
+                            android:layout_alignStart="@+id/fullNameTV"
+                            android:layout_marginTop="7dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="-"
+                            android:id="@+id/timeWeekTV"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:layout_alignTop="@+id/textView4"
+                            android:layout_toEndOf="@+id/textView4"
+                            android:layout_marginLeft="10dp" />
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:id="@+id/beaconStatusIV"
+                            android:layout_alignBottom="@+id/timeWeekTV"
+                            android:src="@drawable/offline"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginRight="8dp"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <Button
+                        android:id="@+id/startNewBtn"
+                        style="?android:textAppearanceSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:text="@string/start_task"
+                        android:textStyle="bold"
+                        android:background="@color/colorAccent"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="16dp" />
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/card_view"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white">
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:id="@+id/email_login_form"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:focusableInTouchMode="true"
+                                android:orientation="vertical"
+                                android:background="@color/white"
+                                android:visibility="visible"
+                                android:gravity="center_horizontal"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:paddingTop="25dp"
+                                android:paddingBottom="25dp">
+
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/textView2"
+                                    android:text="@string/current_task"
+                                    android:textColor="@color/light_grey_text_color"
+                                    android:textSize="13sp" />
+
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="5dp">
+
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <beacons.leto.com.letoibeacons.custom_views.AutoResizeTextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="fill_parent"
+                                            android:id="@+id/currentTV"
+                                            android:text="-"
+                                            android:textColor="@color/black"
+                                            android:textSize="22sp"
+                                            android:maxLines="1"
+                                            android:layout_weight="1" />
+
+                                        <ImageView
+                                            android:layout_width="35dp"
+                                            android:layout_height="35dp"
+                                            android:id="@+id/stopIV"
+                                            android:src="@drawable/icon_stop" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/currentDetailTV"
+                                            android:text="- : -"
+                                            android:textColor="@color/white"
+                                            android:textSize="12sp"
+                                            android:background="@color/light_grey_text_color"
+                                            android:maxWidth="170dp"
+                                            android:singleLine="true"
+                                            android:padding="7dp" />
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/timeCurrentTV"
+                                            android:textColor="@color/dark_grey_text_color"
+                                            android:textSize="14sp"
+                                            android:paddingTop="2dp"
+                                            android:paddingBottom="2dp"
+                                            android:paddingRight="7dp"
+                                            android:paddingLeft="7dp"
+                                            android:layout_weight="1"
+                                            android:gravity="right" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:id="@+id/loadingFL"
+                                android:visibility="gone">
+
+                                <ProgressBar
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/progressBar"
+                                    android:layout_gravity="center"
+                                    android:indeterminate="true" />
+                            </FrameLayout>
+                        </FrameLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/lastCard"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"
+                        android:layout_marginLeft="@dimen/activity_vertical_margin"
+                        android:layout_marginRight="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingTop="25dp"
+                            android:paddingBottom="25dp">
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/textView3"
+                                android:text="@string/last_tracked_task"
+                                android:textColor="@color/light_grey_text_color"
+                                android:textSize="13sp" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="5dp">
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <beacons.leto.com.letoibeacons.custom_views.AutoResizeTextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="fill_parent"
+                                        android:maxLines="1"
+                                        android:id="@+id/lastTaskTV"
+                                        android:text="-"
+                                        android:textColor="@color/black"
+                                        android:textSize="22sp"
+                                        android:layout_weight="1" />
+
+                                    <ImageView
+                                        android:layout_width="35dp"
+                                        android:layout_height="35dp"
+                                        android:id="@+id/playIV"
+                                        android:src="@drawable/icon_play" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/lastTaskDescTV"
+                                        android:text="- : -"
+                                        android:textColor="@color/white"
+                                        android:textSize="12sp"
+                                        android:background="@color/light_grey_text_color"
+                                        android:maxWidth="170dp"
+                                        android:singleLine="true"
+                                        android:padding="7dp" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/timeLastTV"
+                                        android:textColor="@color/dark_grey_text_color"
+                                        android:textSize="14sp"
+                                        android:paddingTop="2dp"
+                                        android:paddingBottom="2dp"
+                                        android:paddingRight="7dp"
+                                        android:paddingLeft="7dp"
+                                        android:layout_weight="1"
+                                        android:gravity="right" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/weekProjCard"
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:layout_marginLeft="@dimen/activity_vertical_margin"
+                        android:layout_marginRight="@dimen/activity_vertical_margin"
+                        android:layout_marginBottom="@dimen/activity_vertical_margin">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:background="@color/white"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="25dp"
+                            android:paddingRight="16dp"
+                            android:paddingBottom="25dp">
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/projects_week"
+                                android:textColor="@color/light_grey_text_color"
+                                android:textSize="13sp" />
+                            <LinearLayout
+                                android:id="@+id/projectsLL"
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginTop="16dp" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/weekCard"
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:layout_marginLeft="@dimen/activity_vertical_margin"
+                        android:layout_marginRight="@dimen/activity_vertical_margin"
+                        android:layout_marginBottom="@dimen/activity_vertical_margin">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:background="@color/white"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="25dp"
+                            android:paddingRight="16dp"
+                            android:paddingBottom="25dp">
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/textView5"
+                                android:text="@string/your_week"
+                                android:textColor="@color/light_grey_text_color"
+                                android:textSize="13sp" />
+                            <com.github.mikephil.charting.charts.BarChart
+                                android:id="@+id/chart2"
+                                android:layout_width="match_parent"
+                                android:layout_height="400dp"
+                                android:background="@color/white"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginTop="16dp" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
+            </ScrollView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </FrameLayout>
+</RelativeLayout>
+
+

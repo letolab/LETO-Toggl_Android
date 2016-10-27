@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="beacons.leto.com.letoibeacons">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:name=".core.CoreApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <receiver android:name=".utils.NotificationActionHandler" />
+
+        <service android:name=".geofence.GeofenceTransitionsIntentService" />
+
+        <meta-data
+            android:name="DATABASE"
+            android:value="toggl_leto.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="beacons.leto.com.letoibeacons.models" />
+
+        <activity
+            android:name=".activities.MainActivity"
+            android:launchMode="singleInstance"
+            android:theme="@style/CustomTheme" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:theme="@style/FullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.LastMonthTimeEntriesActivity" />
+        <activity android:name=".activities.SettingsActivity" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="YOUR FABRIC KEY HERE" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".activities.GeofenceSettingsActivity"
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".activities.BeaconSettingsActivity"
+            android:label="@string/title_activity_beacon_settings" />
+        <activity android:name=".activities.NewTaskActivity" />
+        <activity android:name=".activities.ProjectsActivity"></activity>
+    </application>
+
+</manifest>
